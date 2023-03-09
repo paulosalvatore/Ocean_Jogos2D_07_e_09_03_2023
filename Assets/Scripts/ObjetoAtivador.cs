@@ -13,6 +13,16 @@ public class ObjetoAtivador : MonoBehaviour
     - Pegar outro objeto específico (qualquer outro objeto, definido na cena) e ativá-lo
     */
 
+    // MODIFICADOR_ACESSO (public = Unity visualiza essa informação, private = somente interno nesse script)
+    //    (essa info é opcional e é sempre private por padrão)
+    // TIPO_INFORMACAO (o que define aquele dado, desde números (int, double, float) e textos (string, char)
+    //    até infos mais complexas como GameObject, Transform, Collider2D, etc)
+    // NOME_INFORMACAO (qualquer nome, desde que não tenha espaços e acentos)
+
+    public GameObject objetoParaDesativar;
+
+    public GameObject objetoParaAtivar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +37,10 @@ public class ObjetoAtivador : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print("Trigger ativado!");
+        // print("Trigger ativado!");
+
+        objetoParaDesativar.SetActive(false);
+
+        objetoParaAtivar.SetActive(true);
     }
 }
