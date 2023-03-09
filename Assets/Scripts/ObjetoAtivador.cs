@@ -37,19 +37,27 @@ public class ObjetoAtivador : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // print("Trigger ativado!");
+        if (objetoParaDesativar != null)
+        {
+            objetoParaDesativar.SetActive(false);
+        }
 
-        objetoParaDesativar.SetActive(false);
-
-        objetoParaAtivar.SetActive(true);
+        if (objetoParaAtivar != null)
+        {
+            objetoParaAtivar.SetActive(true);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // print("Trigger ativado!");
+        if (objetoParaDesativar != null)
+        {
+            objetoParaDesativar.SetActive(true);
+        }
 
-        objetoParaDesativar.SetActive(true);
-
-        objetoParaAtivar.SetActive(false);
+        if (objetoParaAtivar != null)
+        {
+            objetoParaAtivar.SetActive(false);
+        }
     }
 }
